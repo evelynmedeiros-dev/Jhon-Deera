@@ -1,0 +1,297 @@
+/* ===== Variáveis (troque aqui as cores/marca) ===== */
+:root {
+  --cor-primaria: #193f15;      /* verde principal */
+  --cor-primaria-escura: #1a1a1a; /* quase preto, usado no gradiente do header */
+  --cor-destaque: #ff6600;      /* laranja do carrinho */
+  --cor-texto: #222222;
+  --cor-texto-claro: #555555;
+  --cor-fundo-secao: #f4f4f4;
+  --cor-fundo-hero-claro: #fbe9e9;
+  --cor-branco: #ffffff;
+  --raio: 14px;
+  --sombra: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --fonte-titulo: "Poppins", "Segoe UI", sans-serif;
+  --fonte-texto: "Inter", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte-texto);
+  color: var(--cor-texto);
+  background: var(--cor-branco);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== Header ===== */
+.header {
+  background: linear-gradient(135deg, var(--cor-primaria-escura), var(--cor-primaria));
+  color: var(--cor-branco);
+  padding: 32px 20px 40px;
+  text-align: center;
+}
+
+.header__marca {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.header__logo {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+}
+
+.header__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+}
+
+.header__nav a {
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.header__nav a:hover,
+.header__nav a[aria-current="page"] {
+  border-color: var(--cor-branco);
+}
+
+.carrinho-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--cor-destaque);
+  color: var(--cor-branco);
+  border: none;
+  border-radius: 999px;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.header__subtitulo {
+  max-width: 560px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+
+/* ===== Hero (página inicial) ===== */
+.hero {
+  background: var(--cor-fundo-hero-claro);
+  text-align: center;
+  padding: 56px 20px;
+}
+
+.hero__titulo {
+  color: var(--cor-primaria);
+  font-family: var(--fonte-titulo);
+  font-size: 2rem;
+  line-height: 1.3;
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+
+.hero__texto {
+  color: var(--cor-texto-claro);
+  font-size: 1.15rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===== Seção de produtos ===== */
+.secao {
+  padding: 48px 20px;
+}
+
+.secao--cinza {
+  background: var(--cor-fundo-secao);
+}
+
+.secao__titulo {
+  text-align: center;
+  color: var(--cor-primaria);
+  font-family: var(--fonte-titulo);
+  font-size: 1.8rem;
+  margin: 0 0 32px;
+}
+
+.produtos {
+  display: grid;
+  gap: 28px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.produto {
+  background: var(--cor-branco);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 24px;
+}
+
+.produto__imagem {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.produto__nome {
+  font-family: var(--fonte-titulo);
+  font-size: 1.3rem;
+  margin: 20px 16px 8px;
+}
+
+.produto__descricao {
+  color: var(--cor-texto-claro);
+  padding: 0 20px;
+  margin-bottom: 16px;
+}
+
+.produto__preco {
+  color: var(--cor-primaria);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.produto__botao {
+  background: var(--cor-primaria);
+  color: var(--cor-branco);
+  border: none;
+  border-radius: 10px;
+  padding: 14px 20px;
+  width: calc(100% - 40px);
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.produto__botao:hover {
+  filter: brightness(1.1);
+}
+
+/* ===== Página Sobre ===== */
+.sobre-hero {
+  background: linear-gradient(135deg, var(--cor-primaria-escura), var(--cor-primaria));
+  color: var(--cor-branco);
+  text-align: center;
+  padding: 48px 20px;
+}
+
+.sobre-hero__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.card-texto {
+  background: var(--cor-branco);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  max-width: 640px;
+  margin: -20px auto 40px;
+  padding: 32px;
+  position: relative;
+  text-align: center;
+}
+
+.card-destaque {
+  border-left: 5px solid var(--cor-primaria);
+  background: var(--cor-fundo-hero-claro);
+  border-radius: 0 var(--raio) var(--raio) 0;
+  max-width: 640px;
+  margin: 32px auto;
+  padding: 28px 32px;
+}
+
+.card-destaque__titulo {
+  color: var(--cor-primaria);
+  margin-top: 0;
+}
+
+.card-logo {
+  background: var(--cor-branco);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 24px;
+  text-align: center;
+}
+
+/* ===== Atletas ===== */
+.atletas {
+  display: grid;
+  gap: 24px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.atleta {
+  background: var(--cor-branco);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  overflow: hidden;
+  text-align: center;
+}
+
+.atleta__imagem {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.atleta__legenda {
+  padding: 16px;
+  font-weight: 600;
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: var(--cor-primaria-escura);
+  color: var(--cor-branco);
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 0.95rem;
+}
+
+/* ===== Responsivo ===== */
+@media (min-width: 700px) {
+  .produtos,
+  .atletas {
+    max-width: 900px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
